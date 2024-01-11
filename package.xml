@@ -19,5 +19,5 @@
         <members>AccountTrigger</members>
         <name>ApexTrigger</name>
     </types>
-    <version>28.0</version>
+    <version>58.0</version>
 </Package>
