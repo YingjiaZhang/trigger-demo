@@ -32,6 +32,7 @@ public with sharing class TriggerFactory
     	TriggerParameters tp = new TriggerParameters(Trigger.old, Trigger.new, Trigger.oldMap, Trigger.newMap,
 									Trigger.isBefore, Trigger.isAfter, Trigger.isDelete, 
 									Trigger.isInsert, Trigger.isUpdate, Trigger.isUnDelete, Trigger.isExecuting);
+        if(!TriggerToggle.shouldTriggerExecuted()) return;
         // Handle before trigger events
         if (Trigger.isBefore) {
             dispatcher.bulkBefore();

@@ -99,6 +99,7 @@ public virtual class TriggerDispatcherBase implements ITriggerDispatcher {
 	* @param TriggerParameters.TriggerEvent The trigger event.
 	*/
    	protected void execute(ITriggerHandler handlerInstance, TriggerParameters tp, TriggerParameters.TriggerEvent tEvent) {
+		if(!TriggerToggle.isExecute()) return;
     	if(handlerInstance != null) {
     		if(tEvent == TriggerParameters.TriggerEvent.beforeInsert)
     			beforeInsertHandler = handlerInstance;
